@@ -9,6 +9,7 @@ import {
 } from "../../reducers/moviesReducers";
 
 export function HomePage() {
+    const maxNominations = 5;
     const [title, setTitle] = useState("");
     const [reducer, dispatch] = useReducer(moviesReducer, initialMoviesReducer)
     return (
@@ -18,7 +19,7 @@ export function HomePage() {
                 <p className="ts-hero--detail">Movie awards for entrepreneurs</p>
             </div>
             <BannerNominations
-                maxNominations={5}
+                maxNominations={maxNominations}
                 moviesNominated={reducer.moviesNominated}
             />
             <SearchMovieForm title={title} setTitle={setTitle} />

@@ -1,9 +1,14 @@
 import { MovieNominated } from "../MovieNominated";
 
-export function MoviesNominated({ moviesNominated = [], dispatch }) {
+export function MoviesNominated({
+    moviesNominated = [],
+    dispatch
+}) {
     return (
         <section className="ts-movies__container">
-            <h2 className="ts-movies__h2">Nominations</h2>
+            <h2 className="ts-movies__h2">
+                Nominations ({moviesNominated.length})
+            </h2>
             {moviesNominated.length === 0 && <p className="ts-movies__info">There aren't movies nominated.</p>}
             {
                 moviesNominated.map((movie, index) =>
