@@ -15,7 +15,10 @@ const moviesReducer = (state, action) => {
 
             return { moviesNominated: [...moviesNominated, payload] };
         case "MOVIE_REMOVES":
-            return state;
+            const filterMovieRemoved = ({ imdbID }) => {
+                return payload.imdbID !== imdbID;
+            }
+            return { moviesNominated: moviesNominated.filter(filterMovieRemoved) };
         default:
             return state;
     }
