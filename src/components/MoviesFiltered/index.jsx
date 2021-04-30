@@ -1,7 +1,7 @@
 import { useMovies } from "../../hooks/useMovies";
 import { MovieItem } from "../MovieItem";
 
-export function MoviesFiltered({ title = "" }) {
+export function MoviesFiltered({ title = "", dispatch }) {
     const { loading, movies, error } = useMovies(title);
 
     if (!title) return null;
@@ -26,7 +26,11 @@ export function MoviesFiltered({ title = "" }) {
             }
             {
                 movies.map((movie, index) =>
-                    <MovieItem key={`movie-nro-${index}-${movie.imdbID}`} movie={movie} />
+                    <MovieItem
+                        key={`movie-nro-${index}-${movie.imdbID}`}
+                        movie={movie}
+                        dispatch={dispatch}
+                    />
                 )
             }
         </section>
