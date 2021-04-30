@@ -1,6 +1,6 @@
 import { MovieNominated } from "../MovieNominated";
 
-export function MoviesNominated({ moviesNominated = [] }) {
+export function MoviesNominated({ moviesNominated = [], dispatch }) {
     return (
         <section className="ts-movies__container">
             <h2 className="ts-movies__h2">Nominations</h2>
@@ -10,6 +10,7 @@ export function MoviesNominated({ moviesNominated = [] }) {
                     <MovieNominated
                         key={`movie-nro-${index}-${movie.imdbID}`}
                         movie={movie}
+                        dispatch={dispatch}
                     />
                 )
             }

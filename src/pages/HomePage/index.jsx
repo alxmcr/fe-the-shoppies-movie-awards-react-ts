@@ -22,7 +22,10 @@ export function HomePage() {
                     title={title}
                     dispatch={dispatch}
                 />}
-                <MoviesNominated moviesNominated={reducer.moviesNominated} />
+                <MoviesNominated
+                    moviesNominated={reducer.moviesNominated}
+                    dispatch={dispatch}
+                />
             </main>
         </>
     )
