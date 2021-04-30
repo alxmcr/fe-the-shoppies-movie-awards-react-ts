@@ -1,4 +1,5 @@
 import { useReducer, useState } from "react";
+import { BannerNominations } from "../../components/BannerNominations";
 import { MoviesFiltered } from "../../components/MoviesFiltered";
 import { MoviesNominated } from "../../components/MoviesNominated";
 import { SearchMovieForm } from "../../components/SearchMovieForm";
@@ -16,6 +17,10 @@ export function HomePage() {
                 <h1 className="ts-hero--title">The Shoppies</h1>
                 <p className="ts-hero--detail">Movie awards for entrepreneurs</p>
             </div>
+            <BannerNominations
+                maxNominations={5}
+                moviesNominated={reducer.moviesNominated}
+            />
             <SearchMovieForm title={title} setTitle={setTitle} />
             <main className="ts-main">
                 {title && <MoviesFiltered
