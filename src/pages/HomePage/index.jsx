@@ -20,6 +20,7 @@ export function HomePage() {
             <main className="ts-main">
                 {title && <MoviesFiltered
                     title={title}
+                    moviesNominated={reducer.moviesNominated}
                     dispatch={dispatch}
                 />}
                 <MoviesNominated

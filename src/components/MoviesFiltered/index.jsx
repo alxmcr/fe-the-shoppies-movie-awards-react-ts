@@ -1,7 +1,11 @@
 import { useMovies } from "../../hooks/useMovies";
 import { MovieItem } from "../MovieItem";
 
-export function MoviesFiltered({ title = "", dispatch }) {
+export function MoviesFiltered({
+    title = "",
+    dispatch,
+    moviesNominated = []
+}) {
     const { loading, movies, error } = useMovies(title);
 
     if (!title) return null;
@@ -29,6 +33,7 @@ export function MoviesFiltered({ title = "", dispatch }) {
                     <MovieItem
                         key={`movie-nro-${index}-${movie.imdbID}`}
                         movie={movie}
+                        moviesNominated={moviesNominated}
                         dispatch={dispatch}
                     />
                 )
