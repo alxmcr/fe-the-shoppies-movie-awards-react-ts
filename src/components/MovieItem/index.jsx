@@ -1,5 +1,12 @@
-export function MovieItem({ movie = {}, dispatch }) {
+export function MovieItem({ movie = {}, dispatch, moviesNominated = [] }) {
     const { imdbID, Title, Year } = movie;
+    const isNominated = (movie, moviesNominated) => {
+        const movieFound = moviesNominated.find(({ imdbID }) => {
+            return movie.imdbID === imdbID
+        });
+
+        return movieFound !== undefined
+    }
     const handlerNominationMovie = (movieToNominate) => {
         dispatch({
             type: "MOVIE_NOMINATES",
@@ -12,7 +19,8 @@ export function MovieItem({ movie = {}, dispatch }) {
             <button
                 className="ts-movie__button ts-movie__button--nominate"
                 onClick={() => handlerNominationMovie(movie)}
+                disabled={isNominated(movie, moviesNominated)}
             >Nominate</button>
-        </div>
+        </div >
     )
 }
