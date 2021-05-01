@@ -1,0 +1,36 @@
+.movieNominated {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  gap: 0.2rem;
+  justify-content: space-between;
+  height: 2.63rem;
+  width: 100%;
+}
+
+.movieNominatedButton {
+  align-items: center;
+  appearance: none;
+  background-color: rgb(216, 79, 79);
+  border: none;
+  border-radius: 2rem;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  justify-content: center;
+  font-size: 0.9rem;
+  height: 100%;
+  text-align: center;
+  width: 30%;
+}
+
+.movieNominatedButton:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.movieNominatedTitle {
+  padding-bottom: 0.2rem;
+  width: 70%;
+}

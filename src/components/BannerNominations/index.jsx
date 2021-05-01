@@ -1,11 +1,22 @@
-export function BannerNominations({ maxNominations = 5, moviesNominated = [] }) {
-    if (moviesNominated.length === 0) return null;
-    if (moviesNominated.length < maxNominations) return null;
+import { faMedal } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import styles from "./BannerNominations.module.css"
 
+export function BannerNominations({ maxNominations = 5 }) {
     return (
-        <div className="ts-banner">
-            <h3 className="ts-banner--h3">Congratulations!</h3>
-            <p className="ts-banner--message">You have already nominated {maxNominations} movies. Thank you so much for your support and help!</p>
+        <div className={styles.banner}>
+            <i className={styles.bannerIcon}>
+                <FontAwesomeIcon icon={faMedal} />
+            </i>
+            <div>
+                <h2 className={styles.bannerTitle}>Congratulations!</h2>
+                <p className={styles.bannerMessage}>
+                    You have already nominated <span className={styles.bannerEmphasis}>{` ${maxNominations} movies`}</span>.
+                </p>
+                <p className={styles.bannerMessage}>
+                    Thank you so much for your support and help!
+                </p>
+            </div>
         </div>
     )
 }

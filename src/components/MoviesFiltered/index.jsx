@@ -1,41 +1,60 @@
-import { useMovies } from "../../hooks/useMovies";
+import { useMoviesFake } from "../../hooks/useMoviesFake";
 import { MovieItem } from "../MovieItem";
+import styles from "./MoviesFiltered.module.css"
 
 export function MoviesFiltered({
     title = "",
     dispatch,
     moviesNominated = []
 }) {
-    const { loading, movies, error } = useMovies(title);
+    const { searching, movies, error } = useMoviesFake(title);
 
     if (!title) return null;
 
+    const isNominated = (movie, moviesNominated) => {
+        const movieFound = moviesNominated.find(({ imdbID }) => {
+            return movie.imdbID === imdbID
+        });
+
+        return movieFound !== undefined
+    }
+
     return (
-        <section className="ts-movies__container">
-            <h2 className="ts-movies__h2">Results for "{title}"</h2>
-            {loading &&
-                <p className="ts-movies__message">
-                    Searching movies with "{title}" as title.
+        <section className={styles.moviesFilteredSection}>
+            <h2 className={styles.moviesFilteredSubtitle}>
+                Results for "{title}"
+            </h2>
+            {(title && searching) &&
+                <p>
+                    Searching movies with "{title}" as title...
                 </p>
             }
             {error &&
-                <p className="ts-movies__message ts-movies__message--error">
-                    Searching movies with "{title}" as title.
+                <p>
+                    There was an error when we searching a movie "{title}" as title...
                 </p>
             }
-            {movies.length === 0 &&
-                <p className="ts-movies__message ts-movies__message--info">
+            {(movies.length === 0 && !searching) &&
+                <p>
                     There aren't movies with "{title}" as title.
                 </p>
             }
             {
-                movies.map((movie, index) =>
-                    <MovieItem
-                        key={`movie-nro-${index}-${movie.imdbID}`}
-                        movie={movie}
-                        moviesNominated={moviesNominated}
-                        dispatch={dispatch}
-                    />
+                !searching && (
+                    <div className={styles.moviesFilteredContainer}>
+                        {
+                            movies.map((movie, index) =>
+                                <MovieItem
+                                    key={`movie-nro-${index}-${movie.imdbID}`}
+                                    movie={movie}
+                                    dispatch={dispatch}
+                                    isNominated={
+                                        isNominated(movie, moviesNominated)
+                                    }
+                                />
+                            )
+                        }
+                    </div>
                 )
             }
         </section>

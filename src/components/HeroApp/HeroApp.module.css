@@ -1,0 +1,21 @@
+.hero {
+  margin: 0;
+  padding: 3.5rem 0 1rem 0;
+}
+
+.heroTitle {
+  color: #004c3f;
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 2.5rem;
+  text-align: center;
+}
+
+.heroDescription {
+  font-style: italic;
+  line-height: 3rem;
+  text-align: center;
+}

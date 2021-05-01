@@ -1,24 +1,32 @@
 import { MovieNominated } from "../MovieNominated";
+import styles from "./MoviesNominated.module.css"
 
 export function MoviesNominated({
     moviesNominated = [],
-    dispatch
+    dispatch,
+    maxNominations = 5
 }) {
+    const styleSectionMoviesNominated = moviesNominated.length >= maxNominations
+        ? styles.moviesNominatedSectionFinished
+        : styles.moviesNominatedSection;
     return (
-        <section className="ts-movies__container">
-            <h2 className="ts-movies__h2">
-                Nominations ({moviesNominated.length})
+        <section className={styleSectionMoviesNominated}>
+            <h2 className={styles.moviesNominatedSubtitle}>
+                Nominations ({moviesNominated.length}/{maxNominations})
             </h2>
-            {moviesNominated.length === 0 && <p className="ts-movies__info">There aren't movies nominated.</p>}
-            {
-                moviesNominated.map((movie, index) =>
-                    <MovieNominated
-                        key={`movie-nro-${index}-${movie.imdbID}`}
-                        movie={movie}
-                        dispatch={dispatch}
-                    />
-                )
-            }
+            {moviesNominated.length === 0 && <p>There aren't movies nominated.</p>}
+            <div className={styles.moviesNominatedContainer}>
+                {
+                    moviesNominated.map((movie, index) =>
+                        <MovieNominated
+                            key={`movie-nro-${index}-${movie.imdbID}`}
+                            index={index + 1}
+                            movie={movie}
+                            dispatch={dispatch}
+                        />
+                    )
+                }
+            </div>
         </section>
     )
 }

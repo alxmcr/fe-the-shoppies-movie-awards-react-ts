@@ -1,0 +1,25 @@
+.moviesNominatedContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.moviesNominatedSection {
+  background-color: #004c3f;
+  border-radius: 0.4rem;
+  color: white;
+  margin: 1.5rem 0.5rem;
+  padding: 0.5rem;
+}
+
+.moviesNominatedSectionFinished {
+  background-color: white;
+  border-radius: 0.4rem;
+  margin: 1.5rem 0.5rem;
+  padding: 0.5rem;
+}
+
+.moviesNominatedSubtitle {
+  margin-top: 0px;
+}
+

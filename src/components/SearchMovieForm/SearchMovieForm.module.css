@@ -1,0 +1,45 @@
+.searchMovieForm {
+  background-color: white;
+  border-radius: 0.4rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.searchMovieIcon {
+  color: #008060;
+  margin: 0 0.5rem;
+}
+
+.searchMovieInput {
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  color: #008060;
+  display: block;
+  font-size: 1rem;
+  padding: 1em 0.9375em;
+  width: 100%;
+}
+
+.searchMovieInput:focus {
+  outline: none;
+}
+
+.searchMovieInputSearch {
+  border: 0.8px solid #008060;
+  border-radius: 8px;
+  align-items: center;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  gap: 0.2rem;
+  justify-content: space-between;
+}
+
+.searchMovieLabel {
+  color: #004c3f;
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 2.5rem;
+}

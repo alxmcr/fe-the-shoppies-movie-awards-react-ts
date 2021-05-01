@@ -1,0 +1,11 @@
+@media screen and (min-width: 650px) {
+  .home {
+    margin: 0 auto;
+    width: 75%;
+  }
+
+  .homeGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
