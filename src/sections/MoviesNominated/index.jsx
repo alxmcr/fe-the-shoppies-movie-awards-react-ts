@@ -15,7 +15,9 @@ export function MoviesNominated({
             <h2 className={styles.moviesNominatedSubtitle}>
                 Nominations ({moviesNominated.length}/{maxNominations})
             </h2>
-            {moviesNominated.length === 0 && <p>There aren't movies nominated.</p>}
+            {moviesNominated.length === 0 &&
+                <p className={styles.moviesNominatedInfoMSG}>There aren't movies nominated.</p>
+            }
             <div className={styles.moviesNominatedContainer}>
                 {
                     moviesNominated.map((movie, index) =>

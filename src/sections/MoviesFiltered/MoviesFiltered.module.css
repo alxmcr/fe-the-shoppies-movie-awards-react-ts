@@ -4,6 +4,11 @@
   gap: 0.5rem;
 }
 
+.moviesFilteredInfoMSG,
+.moviesFilteredErrorMSG {
+  text-align: center;
+}
+
 .moviesFilteredSection {
   background-color: white;
   border-radius: 0.4rem;
@@ -19,7 +24,7 @@
 }
 
 @media screen and (min-width: 650px) {
-  .moviesFilteredSection{
+  .moviesFilteredSection {
     display: block;
   }
 
