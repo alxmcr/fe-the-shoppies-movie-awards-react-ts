@@ -4,6 +4,10 @@
   gap: 0.5rem;
 }
 
+.moviesNominatedInfoMSG{
+  text-align: center;
+}
+
 .moviesNominatedSection {
   background-color: #004c3f;
   border-radius: 0.4rem;
