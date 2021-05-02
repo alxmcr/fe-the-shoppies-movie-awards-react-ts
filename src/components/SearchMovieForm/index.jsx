@@ -22,7 +22,7 @@ export function SearchMovieForm({ title, setTitle }) {
                         value={title}
                         onChange={handleTitle}
                         placeholder="Enter a movie title here..."
-                        maxLength={20}
+                        maxLength={30}
                     />
                 </div>
             </div>

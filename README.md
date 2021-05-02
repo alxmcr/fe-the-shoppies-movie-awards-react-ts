@@ -1,99 +1,70 @@
+# Getting Started with Create React App
 
-![Logo](https://user-images.githubusercontent.com/8689897/116800025-58cf5d80-aacb-11eb-9ad1-fb98162796ac.png)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-    
-# The Shoppies
+## Available Scripts
 
-Movie awards for entrepreneurs.
+In the project directory, you can run:
 
+### `npm start`
 
-## Features
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-- Search OMDB and display the results (movies only).
-- Add a movie from the search results to our nomination list.
-- View the list of films already nominated.
-- Remove a nominee from the nomination list.
-- If a search result has already been nominated, disable its nominate button.
-- Display a banner when the user has 5 nominations.
-- Save nomination lists if the user leaves the page (in LocalStorage).
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-  
-## Documentation
+### `npm test`
 
-[Documentation by Shopify](https://docs.google.com/document/d/1SdR9rQpocsH5rPTOcxr9noqHRld5NJlylKO9Hf94U8U/edit#heading=h.31w9woubunro)
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-  
-## Lessons Learned
+### `npm run build`
 
-- Use React Hooks like `useState`, `useEffect`, `useReducer`, and `useContext`.
-- `useReducer`: I should use this hook when you have complex state logic and how to use dispatch function.
-- Context: Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-What did you learn while building this project? What challenges did you face and how did you overcome them?
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-  
-## Run Locally
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Clone the project
+### `npm run eject`
 
-```bash
-  git clone https://github.com/alxmcr/the-shoppies-movie-awards.git
-```
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-Go to the project directory
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-```bash
-  cd the-shoppies-movie-awards
-```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-Install dependencies
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-```bash
-  npm install
-```
+## Learn More
 
-Start the server
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-```bash
-  npm run start
-```
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-  
-## Environment Variables
+### Code Splitting
 
-To run this project, you will need to add the following environment variables to your .env file
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-`REACT_APP_API_KEY`
+### Analyzing the Bundle Size
 
-You should put as value the API KEY that you got from [OMDB's API](https://www.omdbapi.com/apikey.aspx).
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-  
-## Tech Stack
+### Making a Progressive Web App
 
-**Client:** HTML, CSS, JavaScript, React, React Hooks, and Font Awesome.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-**Server:** Node
+### Advanced Configuration
 
-  
-## Screenshots
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-![image](https://user-images.githubusercontent.com/8689897/116796142-3546eb80-aaa8-11eb-9067-5bdb54ae6eee.png)
+### Deployment
 
-![image](https://user-images.githubusercontent.com/8689897/116800003-24f43800-aacb-11eb-850d-4cf9f2050d42.png)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-  
-## Demo
+### `npm run build` fails to minify
 
-[https://the-shoppies-movie-awards-app.netlify.app/](https://the-shoppies-movie-awards-app.netlify.app/)
-
-  
-## Authors
-
-- [Alejandro M. Coca Rojas (@alxmcr)](https://www.github.com/alxmcr)
-
-  
-## Feedback
-
-If you have any feedback, please reach out to us at amcocarojas@gmail.com.
-
-  
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

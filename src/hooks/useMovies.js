@@ -5,11 +5,11 @@ const typeResults = "movie";
 const baseURLAPI = `https://www.omdbapi.com/?apikey=${apiKeyOMDB}`;
 
 export function useMovies(title = "") {
-    const [searching, setSearching] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [movies, setMovies] = useState([]);
     const [errorAPI, setErrorAPI] = useState(null);
     useEffect(() => {
-        setSearching(true);
+        setLoading(true);
         const urlAPI = `${baseURLAPI}&type=${typeResults}&s=${title}`;
         fetch(urlAPI)
             .then(response => response.json())
@@ -24,10 +24,10 @@ export function useMovies(title = "") {
                 }
             })
             .catch((err) => setErrorAPI(err))
-            .finally(() => setSearching(false))
+            .finally(() => setLoading(false))
 
     }, [title])
 
 
-    return { searching, movies, errorAPI }
+    return { loading, movies, errorAPI }
 }
