@@ -1,13 +1,12 @@
-import { useMoviesFake } from "../../hooks/useMoviesFake";
-import { MovieItem } from "../MovieItem";
+import { useContext } from "react";
+import MoviesNominatedContext from "contexts/MoviesNominatedContext";
+import { useMoviesFake } from "hooks/useMoviesFake";
+import { MovieItem } from "components/MovieItem";
 import styles from "./MoviesFiltered.module.css"
 
-export function MoviesFiltered({
-    title = "",
-    dispatch,
-    moviesNominated = []
-}) {
+export function MoviesFiltered({ title = "" }) {
     const { searching, movies, error } = useMoviesFake(title);
+    const { dispatch, moviesNominated } = useContext(MoviesNominatedContext)
 
     if (!title) return null;
 

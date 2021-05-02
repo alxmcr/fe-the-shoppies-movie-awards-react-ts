@@ -1,11 +1,12 @@
-import { MovieNominated } from "../MovieNominated";
+import MoviesNominatedContext from "contexts/MoviesNominatedContext";
+import { MovieNominated } from "components/MovieNominated";
 import styles from "./MoviesNominated.module.css"
+import { useContext } from "react";
 
 export function MoviesNominated({
-    moviesNominated = [],
-    dispatch,
     maxNominations = 5
 }) {
+    const { dispatch, moviesNominated } = useContext(MoviesNominatedContext)
     const styleSectionMoviesNominated = moviesNominated.length >= maxNominations
         ? styles.moviesNominatedSectionFinished
         : styles.moviesNominatedSection;

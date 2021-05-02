@@ -1,10 +1,13 @@
+const currentMoviesNominated = JSON.parse(localStorage.getItem("moviesNominated"));
 const initialMoviesReducer = {
-    moviesNominated: []
+    moviesNominated: (!currentMoviesNominated ? [] : currentMoviesNominated)
 }
 
 const moviesReducer = (state, action) => {
     const { moviesNominated } = state;
     const { type, payload } = action;
+    let currentState = state;
+    let moviesNominatedToStore = [];
     switch (type) {
         case "MOVIE_NOMINATES":
             const findMovieById = ({ imdbID }) => payload.imdbID === imdbID;
@@ -13,14 +16,24 @@ const moviesReducer = (state, action) => {
 
             if (isNominateYet) return state;
 
-            return { moviesNominated: [...moviesNominated, payload] };
+            moviesNominatedToStore = [...moviesNominated, payload]
+            currentState = {
+                moviesNominated: moviesNominatedToStore
+            };
+            localStorage.setItem("moviesNominated", JSON.stringify(moviesNominatedToStore))
+            return currentState;
         case "MOVIE_REMOVES":
             const filterMovieRemoved = ({ imdbID }) => {
                 return payload.imdbID !== imdbID;
             }
-            return { moviesNominated: moviesNominated.filter(filterMovieRemoved) };
+            moviesNominatedToStore = moviesNominated.filter(filterMovieRemoved);
+            currentState = {
+                moviesNominated: moviesNominatedToStore
+            }
+            localStorage.setItem("moviesNominated", JSON.stringify(moviesNominatedToStore))
+            return currentState;
         default:
-            return state;
+            return currentState;
     }
 }
 
