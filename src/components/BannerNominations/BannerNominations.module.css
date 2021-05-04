@@ -11,13 +11,19 @@
 }
 
 .bannerActions {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
   text-align: right;
 }
 
 .bannerButton {
   appearance: none;
   background-color: transparent;
-  border: 1px solid #d3d3d3;
+  border: none;
   border-radius: 0.2rem;
   color: #d3d3d3;
   font-weight: bold;
@@ -49,11 +55,30 @@
   text-align: justify;
 }
 
+@media screen and (max-width: 320px) {
+  .banner {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .bannerIcon {
+    display: none;
+  }
+
+  .bannerMessage {
+    padding: 0.5rem 2.5rem;
+  }
+}
+
 @media screen and (max-width: 435px) {
   .banner {
     display: flex;
-    padding: 0.5rem 1.5rem;
+    padding: 1.2rem 0.5rem;
     gap: 1rem;
+  }
+
+  .bannerIcon {
+    display: none;
   }
 
   .bannerText {
@@ -67,10 +92,4 @@
   }
 }
 
-@media screen and (max-width: 320px) {
-  .banner {
-    display: flex;
-    padding: 0.5rem 3.5rem;
-    gap: 1rem;
-  }
-}
+

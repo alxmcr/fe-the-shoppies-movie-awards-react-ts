@@ -10,7 +10,7 @@ export function BannerNominations({ maxNominations = 5, setShowBanner }) {
                 <i className={styles.bannerIcon}>
                     <FontAwesomeIcon icon={faMedal} />
                 </i>
-                <p className="bannerMessage">
+                <p className={styles.bannerMessage}>
                     You have already nominated <span className={styles.bannerEmphasis}>{`${maxNominations} movies`} </span>.
                     <br />
                     Thank you so much for your support and help!
