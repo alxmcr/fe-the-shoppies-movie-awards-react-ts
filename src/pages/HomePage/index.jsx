@@ -15,7 +15,7 @@ export function HomePage() {
     const maxNominations = 5;
     const [title, setTitle] = useState("");
     const [showBanner, setShowBanner] = useState(false);
-    const [showSearchForm, setShowSearchForm] = useState(false);
+    const [showMovies, setShowMovies] = useState(false);
     const [reducer, dispatch] = useReducer(moviesReducer, initialMoviesReducer)
     const moviesNominated = reducer.moviesNominated;
     const valueProvider = {
@@ -24,7 +24,7 @@ export function HomePage() {
     }
     useEffect(() => {
         setShowBanner(moviesNominated.length >= maxNominations);
-        setShowSearchForm(moviesNominated.length < maxNominations);
+        setShowMovies(moviesNominated.length < maxNominations);
     }, [moviesNominated, maxNominations]);
     return (
         <MoviesNominatedContext.Provider value={valueProvider}>
@@ -36,13 +36,13 @@ export function HomePage() {
                     />
                 }
                 <HeroApp />
-                {showSearchForm &&
+                {showMovies &&
                     <SearchMovieForm
                         title={title}
                         setTitle={setTitle}
                     />
                 }
-                {showSearchForm && <MoviesFiltered title={title} />}
+                {showMovies && <MoviesFiltered title={title} />}
                 <MoviesNominated maxNominations={maxNominations} />
             </main>
         </MoviesNominatedContext.Provider >
