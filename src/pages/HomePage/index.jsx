@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { BannerNominations } from "components/BannerNominations";
 import { HeroApp } from "components/HeroApp";
 import { MoviesFiltered } from "sections/MoviesFiltered";
@@ -14,24 +14,31 @@ import styles from './HomePage.module.css'
 export function HomePage() {
     const maxNominations = 5;
     const [title, setTitle] = useState("");
+    const [showBanner, setShowBanner] = useState(false);
     const [reducer, dispatch] = useReducer(moviesReducer, initialMoviesReducer)
     const moviesNominated = reducer.moviesNominated;
     const valueProvider = {
         moviesNominated,
         dispatch
     }
+    useEffect(() => {
+        setShowBanner(moviesNominated.length >= maxNominations);
+    }, [moviesNominated, maxNominations]);
     return (
         <MoviesNominatedContext.Provider value={valueProvider}>
             <main className={styles.home}>
+                {showBanner &&
+                    <BannerNominations
+                        maxNominations={maxNominations}
+                        setShowBanner={setShowBanner}
+                    />
+                }
                 <HeroApp />
                 {moviesNominated.length < maxNominations
                     && <SearchMovieForm title={title} setTitle={setTitle} />
                 }
                 {moviesNominated.length < maxNominations
                     && <MoviesFiltered title={title} />
-                }
-                {moviesNominated.length >= maxNominations &&
-                    <BannerNominations maxNominations={maxNominations} />
                 }
                 <MoviesNominated maxNominations={maxNominations} />
             </main>

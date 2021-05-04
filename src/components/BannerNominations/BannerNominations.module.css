@@ -1,38 +1,76 @@
 .banner {
   align-items: center;
   background-color: #004c3f;
-  border-radius: 0.4rem;
   color: #d3d3d3;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 0.5rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  padding: 2rem 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.8rem 2rem;
+  width: 100%;
+}
+
+.bannerActions {
+  text-align: right;
+}
+
+.bannerButton {
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid #d3d3d3;
+  border-radius: 0.2rem;
+  color: #d3d3d3;
+  font-weight: bold;
+  padding: 0.5rem;
+}
+
+.bannerButton:hover {
+  background-color: #d3d3d3;
+  color: #004c3f;
+  cursor: pointer;
 }
 
 .bannerEmphasis {
-  background-color: white;
+  background-color: #d3d3d3;
   color: #004c3f;
-  font-weight: bold;
   padding: 0 0.5rem;
 }
 
 .bannerIcon {
-  color: white;
-  font-size: 7rem;
+  font-size: 3rem;
 }
 
-.bannerMessage {
-  font-style: italic;
-  text-align: center;
+.bannerText {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 1rem;
+  text-align: justify;
 }
 
-.bannerTitle {
-  color: white;
-  font-weight: 800;
-  line-height: 2;
-  margin: 0;
-  text-align: center;
+@media screen and (max-width: 435px) {
+  .banner {
+    display: flex;
+    padding: 0.5rem 1.5rem;
+    gap: 1rem;
+  }
+
+  .bannerText {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+    text-align: justify;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .banner {
+    display: flex;
+    padding: 0.5rem 3.5rem;
+    gap: 1rem;
+  }
 }
