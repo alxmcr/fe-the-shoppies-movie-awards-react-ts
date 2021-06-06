@@ -27,10 +27,7 @@ Movie awards for entrepreneurs.
 - Use React Hooks like `useState`, `useEffect`, `useReducer`, and `useContext`.
 - `useReducer`: I should use this hook when you have complex state logic and how to use dispatch function.
 - Context: Context provides a way to pass data through the component tree without having to pass props down manually at every level.
-
-What did you learn while building this project? What challenges did you face and how did you overcome them?
-
-  
+ 
 ## Run Locally
 
 Clone the project
